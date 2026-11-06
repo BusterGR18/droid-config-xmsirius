@@ -14,6 +14,9 @@ Requires: droid-config-xmsirius-flashing
 Requires: droid-config-xmsirius-bluez5
 Requires: droid-hal-version-xmsirius
 
+# dmsetup for droid-lp-setup.sh (maps Android dynamic partitions)
+Requires: device-mapper
+
 # Hybris packages
 Requires: libhybris-libEGL
 Requires: libhybris-libGLESv2
