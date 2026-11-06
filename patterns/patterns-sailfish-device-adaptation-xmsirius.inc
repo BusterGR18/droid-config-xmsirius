@@ -61,6 +61,9 @@ Requires: usb-moded
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 Requires: rfkill
 
+# droid-wlan-enable.sh deletes the extra wlan1 interface with iw
+Requires: iw
+
 # Telephony: ofono plugin for the Android radio HAL (qcrild, radio@1.x HIDL);
 # configured by /etc/ofono/binder.conf
 Requires: ofono-binder-plugin
