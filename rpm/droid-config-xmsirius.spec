@@ -13,7 +13,9 @@
 # Pixel ratio 1.0 was originally jolla phone with 245ppi, and the devices
 # should roughly have their ppi compared to that. Large displays can use
 # bigger ratio if seen fit. Values are with 0.25 increments.
-%define pixel_ratio 1.0
+# Mi 8 SE: 5.88" 2244x1080 = ~424 ppi; 424 / 245 = 1.73, but 1.75 looked too
+# big on the device, so use 1.5 (icons z1.5)
+%define pixel_ratio 1.5
 
 
 %define android_version_major 13

@@ -1,0 +1,14 @@
+# Display notch and rounded corners for Silica (Screen.topCutout,
+# Screen.*Corner), in pixels of the 1080x2244 portrait panel.
+#
+# cutouts: list of [x, y, width, height] rectangles. The notch from
+# config_mainBuiltInDisplayCutout in the LineageOS device overlay is centred
+# and spans -308..308 px horizontally and 0..85 px vertically.
+#
+# rounded_corners: [x, y, radius] for top-left, top-right, bottom-left,
+# bottom-right; Silica adds the screen width/height to the right/bottom
+# corners, so 0,0 means "at the screen corner". Radii from
+# rounded_corner_radius_top/bottom (54px/50px) in the same overlay.
+[desktop/sailfish/silica]
+cutouts=[[232, 0, 616, 85]]
+rounded_corners=[[0, 0, 54], [0, 0, 54], [0, 0, 50], [0, 0, 50]]
