@@ -1,0 +1,10 @@
+[Unit]
+Description=Add droid-hybris binaries to Android linker config
+After=droid-hal-init.service
+
+[Service]
+Type=simple
+ExecStart=/bin/sh /usr/bin/droid/droid-linkerconfig-hybris.sh
+
+[Install]
+WantedBy=graphical.target
