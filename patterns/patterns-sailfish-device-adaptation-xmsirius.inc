@@ -61,6 +61,13 @@ Requires: usb-moded
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 Requires: rfkill
 
+# Telephony: ofono plugin for the Android radio HAL (qcrild, radio@1.x HIDL);
+# configured by /etc/ofono/binder.conf
+Requires: ofono-binder-plugin
+
+# Bluetooth: bridges the Android Bluetooth HAL to a virtual hci for bluez5
+Requires: bluebinder
+
 # enable device lock and allow to select untrusted software
 Requires: jolla-devicelock-daemon-encsfa
 
