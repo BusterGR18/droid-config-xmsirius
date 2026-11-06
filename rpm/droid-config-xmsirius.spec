@@ -23,6 +23,11 @@ Provides: ofono-configs
 Obsoletes: ofono-configs-mer
 Obsoletes: ofono-configs-binder
 
+# Patched Android service managers (sparse/usr/libexec/droid-sm-patch) link
+# against bionic/Android libs from /system; don't generate RPM requires for them.
+%global __requires_exclude_from ^/usr/libexec/droid-sm-patch/.*$
+%global __provides_exclude_from ^/usr/libexec/droid-sm-patch/.*$
+
 %include droid-configs-device/droid-configs.inc
 %include patterns/patterns-sailfish-device-adaptation-xmsirius.inc
 %include patterns/patterns-sailfish-device-configuration-xmsirius.inc
