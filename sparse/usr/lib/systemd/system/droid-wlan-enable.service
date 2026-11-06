@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable qcacld WLAN driver (/dev/wlan)
+After=droid-hal-init.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/bin/droid/droid-wlan-enable.sh
+TimeoutStartSec=90
+
+[Install]
+WantedBy=graphical.target
