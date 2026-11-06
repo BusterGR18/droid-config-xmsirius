@@ -1,0 +1,13 @@
+[Unit]
+Description=Android system-as-root image (mounted aside, /system is bound from its system/ dir)
+Before=local-fs.target systemd-modules-load.service
+
+[Mount]
+What=/dev/mapper/system
+Where=/mnt/sysroot
+Type=ext4
+Options=ro,nosuid,nodev,barrier=1
+TimeoutSec=10
+
+[Install]
+WantedBy=local-fs.target

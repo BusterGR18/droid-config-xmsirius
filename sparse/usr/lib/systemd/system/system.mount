@@ -1,15 +1,14 @@
 [Unit]
-Description=Droid mount for /system
+Description=Droid mount for /system (system/ directory of the system-as-root image)
+Requires=mnt-sysroot.mount
+After=mnt-sysroot.mount
 Before=local-fs.target systemd-modules-load.service
 
 [Mount]
-What=/system_root/system
+What=/mnt/sysroot/system
 Where=/system
 Type=none
-Options=bind
-
-# Default is 90 which makes mount period too long in case of
-# errors so drop it down a notch.
+Options=bind,ro
 TimeoutSec=10
 
 [Install]

@@ -1,0 +1,14 @@
+[Unit]
+Description=Map Android dynamic partitions (dm-linear)
+DefaultDependencies=no
+After=systemd-udevd.service
+Wants=systemd-udevd.service
+Before=mnt-sysroot.mount system.mount vendor.mount product.mount system_ext.mount odm.mount local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/bin/droid/droid-lp-setup.sh
+
+[Install]
+WantedBy=local-fs.target
