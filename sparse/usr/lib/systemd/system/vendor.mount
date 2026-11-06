@@ -8,7 +8,7 @@ Before=local-fs.target systemd-modules-load.service
 What=/dev/mapper/vendor
 Where=/vendor
 Type=ext4
-Options=ro,nosuid,nodev,barrier=1
+Options=ro,nodev,barrier=1
 # Options had SELinux context option:
 
 # Default is 90 which makes mount period too long in case of

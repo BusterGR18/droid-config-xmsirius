@@ -6,7 +6,7 @@ Before=local-fs.target systemd-modules-load.service
 What=/dev/mapper/system_ext
 Where=/system_ext
 Type=ext4
-Options=ro,nosuid,nodev,barrier=1
+Options=ro,nodev,barrier=1
 TimeoutSec=10
 
 [Install]
