@@ -1,0 +1,21 @@
+[Unit]
+Description=Load TAS2557 speaker amplifier firmware
+# The tas2557 driver requests tas2557_uCDSP_*.bin at probe time, before /vendor
+# is mounted (it only appears after droid-lp-setup maps the dynamic
+# partitions), so droid-load-firmware.sh can't find it and the amp stays silent
+# ("tas2557_enable, firmware not loaded"). Ask the driver to request it again
+# (TIAUDIO_CMD_FW_RELOAD = 12 on its misc device) once /vendor is mounted and
+# udev can answer, before Android init starts the audio HAL.
+DefaultDependencies=no
+After=vendor.mount systemd-udevd.service
+Requires=vendor.mount
+Before=droid-hal-init.service
+ConditionPathExists=/dev/tas2557
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c "printf '\\014' > /dev/tas2557"
+
+[Install]
+WantedBy=graphical.target
